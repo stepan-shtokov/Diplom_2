@@ -5,7 +5,7 @@ from static_data.urls import URL, Endpoints
 
 
 @pytest.fixture
-def create_user():
+def create_user():  # Создание пользователя
     payload = PersonData.create_correct_user_data()
     response = requests.post(URL.main_url + Endpoints.CREATE_USER, data=payload)
     yield payload, response
